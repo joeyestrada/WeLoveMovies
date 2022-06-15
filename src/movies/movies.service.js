@@ -19,5 +19,5 @@ function read(movieId) {
 module.exports = {
   list,
   listShowingMovies,
-  read
+  read,
 };

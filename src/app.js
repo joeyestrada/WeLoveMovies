@@ -5,6 +5,7 @@ const app = express();
 // Routers Import
 const moviesRouter = require("./movies/movies.router");
 const reviewsRouter = require("./reviews/reviews.router");
+const theatersRouter = require("./theaters/theaters.router");
 
 // Errors Import
 const notFound = require("./errors/notFound");
@@ -16,6 +17,7 @@ app.use(express.json());
 // Routers
 app.use("/movies", moviesRouter);
 app.use("/reviews", reviewsRouter);
+app.use("/theaters", theatersRouter);
 
 // Errors
 app.use(notFound);

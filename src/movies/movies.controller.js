@@ -1,4 +1,5 @@
 const service = require("./movies.service");
+const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 async function checkParams(req, res, next) {
   const { is_showing } = req.query;
@@ -32,6 +33,7 @@ async function read(req, res) {
 }
 
 module.exports = {
-  list: [checkParams, list],
-  read: [movieExists, read],
+  list: [asyncErrorBoundary(checkParams), asyncErrorBoundary(list)],
+  read: [asyncErrorBoundary(movieExists), asyncErrorBoundary(read)],
+  movieExists
 };
