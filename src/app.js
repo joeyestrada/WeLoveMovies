@@ -1,6 +1,7 @@
 if (process.env.USER) require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors")
 
 // Routers Import
 const moviesRouter = require("./movies/movies.router");
@@ -13,6 +14,7 @@ const errorHandler = require("./errors/errorHandler");
 
 // Still don't know what this does :D
 app.use(express.json());
+app.use(cors())
 
 // Routers
 app.use("/movies", moviesRouter);
