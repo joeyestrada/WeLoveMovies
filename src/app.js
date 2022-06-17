@@ -12,9 +12,11 @@ const theatersRouter = require("./theaters/theaters.router");
 const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler");
 
+// But I know this one!
+app.use(cors())
+
 // Still don't know what this does :D
 app.use(express.json());
-app.use(cors())
 
 // Routers
 app.use("/movies", moviesRouter);
