@@ -17,6 +17,6 @@ exports.up = function (knex) {
   };
   
   exports.down = function (knex) {
-    return knex.schema.droptable("movies_theaters");
+    return knex.schema.dropTable("movies_theaters");
   };
   
